@@ -33,7 +33,7 @@ Save without asking when the member decided something, asked for something to be
 
 ## 3. Ask before acting outward
 
-Anything that sends, posts, deletes, spends or reaches other people (mail, messages, app writes, running an automation, installing a skill, removing an agent) first answers `needsConfirmation: true` and changes nothing. Show the member exactly what it would do, as the tool described it. Call again with `confirm: true` (and the `confirmToken` it returned, when present) only after the member says yes in their own message. Never set `confirm: true` on a first call. Only `happened.applied: true` means something changed.
+Anything that sends, posts, deletes, spends or reaches other people (mail, messages, app writes, running an automation, installing a skill, removing an agent) first answers `needsConfirmation: true` and changes nothing. Show the member exactly what it would do, as the tool described it. Call the same tool again with the same arguments, `confirm: true` and the `confirmToken` it returned only after the member says yes in their own message. Never set `confirm: true` on a first call. Only `happened.applied: true` means something changed.
 
 ## 4. The rest of the tools
 
