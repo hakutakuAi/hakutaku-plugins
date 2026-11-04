@@ -42,18 +42,30 @@ async function prepareClaude({ root, arm, url }) {
 	return dir
 }
 
-function run(command, args, env, cwd) {
+function run(command, args, env, cwd, timeoutMs = 0) {
 	return new Promise((resolveRun) => {
 		const child = spawn(command, args, { env: { ...process.env, ...env }, cwd })
 		let out = ''
 		let err = ''
+		let timedOut = false
+		const timer = timeoutMs
+			? setTimeout(() => {
+					timedOut = true
+					child.kill()
+				}, timeoutMs)
+			: null
 		child.stdout.on('data', (chunk) => (out += chunk))
 		child.stderr.on('data', (chunk) => (err += chunk))
-		child.on('close', (code) => resolveRun({ code, out, err }))
+		child.on('close', (code) => {
+			if (timer) clearTimeout(timer)
+			resolveRun({ code, out, err, timedOut })
+		})
 	})
 }
 
-async function claudeTurn({ configDir, cwd, prompt, model = 'sonnet', maxTurns = 20, resume }) {
+const DEFAULT_TOOLS = ['mcp__hakutaku__*', 'mcp__plugin_hakutaku_hakutaku__*', 'Skill', 'Agent', 'Read']
+
+async function claudeTurn({ configDir, cwd, prompt, model = 'sonnet', maxTurns = 20, resume, allowedTools = DEFAULT_TOOLS, timeoutMs = 600000 }) {
 	const args = [
 		'-p',
 		prompt,
@@ -65,16 +77,12 @@ async function claudeTurn({ configDir, cwd, prompt, model = 'sonnet', maxTurns =
 		'--max-turns',
 		String(maxTurns),
 		'--allowedTools',
-		'mcp__hakutaku__*',
-		'mcp__plugin_hakutaku_hakutaku__*',
-		'Skill',
-		'Agent',
-		'Read',
+		...allowedTools,
 	]
 	if (resume) args.push('--resume', resume)
 	const started = Date.now()
-	const { code, out } = await run('claude', args, { CLAUDE_CONFIG_DIR: configDir, ENABLE_CLAUDEAI_MCP_SERVERS: 'false' }, cwd)
-	return { code, ms: Date.now() - started, events: parseStream(out) }
+	const { code, out, timedOut } = await run('claude', args, { CLAUDE_CONFIG_DIR: configDir, ENABLE_CLAUDEAI_MCP_SERVERS: 'false' }, cwd, timeoutMs)
+	return { code, timedOut, ms: Date.now() - started, events: parseStream(out) }
 }
 
 function parseStream(text) {
@@ -100,7 +108,7 @@ function summarize(events) {
 		const content = event.message?.content
 		if (!Array.isArray(content)) continue
 		for (const part of content) {
-			if (part.type === 'tool_use') calls.push({ id: part.id, name: part.name, input: part.input })
+			if (part.type === 'tool_use') calls.push({ id: part.id, name: part.name, input: part.input, parent: event.parent_tool_use_id ?? null })
 			if (part.type === 'tool_result') outputs.set(part.tool_use_id, part.content)
 		}
 	}
@@ -111,9 +119,18 @@ function summarize(events) {
 		calls,
 		answer: result?.result ?? '',
 		costUsd: result?.total_cost_usd ?? 0,
+		isError: Boolean(result?.is_error) || !result,
+		numTurns: result?.num_turns ?? 0,
 		ms: result?.duration_ms ?? 0,
 		usage: result?.usage ?? {},
 	}
 }
 
-export { prepareClaude, claudeTurn, summarize, run, REPO }
+// The commit the plugin arm is built from, and whether the packaged files differ from it.
+async function repoCommit() {
+	const head = await run('git', ['rev-parse', 'HEAD'], {}, REPO)
+	const dirty = await run('git', ['status', '--porcelain', '--', '.', ':!benchmarks'], {}, REPO)
+	return { commit: head.out.trim(), packagedFilesDirty: dirty.out.trim().length > 0 }
+}
+
+export { repoCommit, prepareClaude, claudeTurn, summarize, run, REPO, DEFAULT_TOOLS }
