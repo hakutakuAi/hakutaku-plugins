@@ -1,0 +1,764 @@
+{
+	"version": 1,
+	"split_rule": "stratified by kind: item index % 3 === 0 -> train, else heldout",
+	"train": [
+		{
+			"id": "should-01",
+			"prompt": "Before I refactor the billing module, what did we decide last quarter about moving invoices to the new ledger service?",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-04",
+			"prompt": "We just agreed to drop Redis for session storage and use Postgres instead, because of the ops cost. Record that decision so I can find it later.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-07",
+			"prompt": "Kick off a deep research on competitor pricing for B2B scheduling tools and give me the task id, I'll check later.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-10",
+			"prompt": "Is there anything in my notes about why we chose Kafka over RabbitMQ for the events pipeline?",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-13",
+			"prompt": "How many open action items do I have from the planning meetings this month?",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-16",
+			"prompt": "Our team agreed on a naming convention for feature flags in the mobile app at some point. What was it?",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-19",
+			"prompt": "Keep in mind for the future that the Lisbon client prefers invoices in EUR, not USD. Put it in my Hakutaku.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-22",
+			"prompt": "Did we ever talk to Acme Lumen about a volume discount? I need context before the call.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-25",
+			"prompt": "O que a gente decidiu na reunião de ontem sobre o prazo do projeto Atlas?",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-28",
+			"prompt": "Quem é o responsável pelo contrato com a transportadora? Preciso falar com essa pessoa hoje.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-31",
+			"prompt": "Quais integrações eu tenho conectadas no momento?",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-34",
+			"prompt": "Set a follow-up for me to revisit the vendor shortlist next Monday.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "near-01",
+			"prompt": "What is a knowledge graph and how is it different from a relational database?",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-04",
+			"prompt": "Save this file to disk as report.md.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-07",
+			"prompt": "How do I parse a CSV with pandas and compute the total of a column?",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-10",
+			"prompt": "Generate an architecture decision record template in markdown.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-13",
+			"prompt": "Write a Python script that reads the calendar.ics file in this folder and lists the events on Thursday.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-16",
+			"prompt": "How do I set up a Slack webhook to post deploy notifications from GitHub Actions?",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-19",
+			"prompt": "What are the steps to build a pivot table in Excel that totals sales by region?",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-22",
+			"prompt": "Commit these changes with a message describing the decision to switch to Postgres.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-25",
+			"prompt": "What is the Model Context Protocol and how do servers expose tools?",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-28",
+			"prompt": "Escreve uma query SQL que soma o faturamento por mês.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-31",
+			"prompt": "Como funciona o cálculo de juros compostos?",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-34",
+			"prompt": "Write a cron expression that runs every Monday at 9am.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "bg-01",
+			"prompt": "Fix the TypeScript error \"Property id does not exist on type never\" in src/user/list.tsx.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-04",
+			"prompt": "Add pagination to the /api/products endpoint.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-07",
+			"prompt": "Write a regex that matches Brazilian CEP codes.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-10",
+			"prompt": "Explain this stack trace: TypeError: Cannot read properties of undefined (reading 'map').",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-13",
+			"prompt": "Set up a GitHub Actions workflow that runs pytest on push.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-16",
+			"prompt": "Write a bash script that deletes log files older than 7 days.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-19",
+			"prompt": "Add input validation with zod to the signup form.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-22",
+			"prompt": "Generate TypeScript types from this OpenAPI spec.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-25",
+			"prompt": "Add retry with exponential backoff to the fetch wrapper.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-28",
+			"prompt": "Explain what this git rebase conflict means and resolve it.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-31",
+			"prompt": "Why is my Python venv not picking up the installed packages?",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-34",
+			"prompt": "Create a Makefile target that runs the dev server and the worker together.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-37",
+			"prompt": "Migrate this Jest test suite to Vitest.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-40",
+			"prompt": "Set the max line length to 100 in the prettier config.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-43",
+			"prompt": "Bump the Node version in .nvmrc to 22 and fix whatever breaks.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-46",
+			"prompt": "Por que esse teste do Playwright falha só no CI?",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-49",
+			"prompt": "Escreve um script em Node que lê um CSV e insere as linhas no Postgres.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-52",
+			"prompt": "Esse loop tá O(n²), dá pra melhorar?",
+			"expect": "no-load",
+			"kind": "background"
+		}
+	],
+	"heldout": [
+		{
+			"id": "should-02",
+			"prompt": "Who on my team owns the onboarding emails project? I want to ping them about the copy change.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-03",
+			"prompt": "Summarize what came out of yesterday's meeting with the logistics vendor.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-05",
+			"prompt": "From my sales spreadsheet and the CRM export I uploaded, what was total revenue by region in Q3?",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-06",
+			"prompt": "Check my calendar and tell me if I'm free Thursday afternoon for the design review.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-08",
+			"prompt": "Hand this to my research agent: compile everything public about the new LGPD guidance on employee monitoring.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-09",
+			"prompt": "What did Marina say about the API rate limits in the last architecture sync?",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-11",
+			"prompt": "Save this postmortem summary to my brain so the team can find it next time the queue backs up.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-12",
+			"prompt": "Draft a reply to the last email from our accountant about the invoice discrepancy and show it to me before sending.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-14",
+			"prompt": "Which apps and document sources do I have connected right now?",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-15",
+			"prompt": "Compare the headcount numbers in the HR sheet with the payroll table from the finance export. Do they match?",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-17",
+			"prompt": "Pull up the decisions from the pricing workshop and tell me which ones are still open.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-18",
+			"prompt": "Post a message in our #releases Slack channel saying the 2.4 build is out.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-20",
+			"prompt": "What's the status of the background task I gave my agent this morning?",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-21",
+			"prompt": "Write the release notes for this sprint and store them in my knowledge base too.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-23",
+			"prompt": "Run my weekly KPI automation now.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-24",
+			"prompt": "Before I start this migration, check whether we had incidents with the payments database in past postmortems.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-26",
+			"prompt": "Quanto gastamos com fornecedores em setembro segundo a planilha de contas a pagar que eu subi?",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-27",
+			"prompt": "Salva essa decisão no meu cérebro: vamos congelar novas features até o fim do mês por causa da auditoria.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-29",
+			"prompt": "Manda pro meu agente pesquisar fornecedores de embalagem sustentável e me passa o id da tarefa.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-30",
+			"prompt": "Tem algum e-mail do banco sobre a renovação do limite de crédito? Resume pra mim.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-32",
+			"prompt": "Me lembra o que o cliente da Bahia pediu na última call de alinhamento.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-33",
+			"prompt": "I'm writing the proposal for the warehouse client; pull the scope we discussed at the kickoff and their budget ceiling.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-35",
+			"prompt": "Find the latest version of our security questionnaire answers so I can reuse them for this customer.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "should-36",
+			"prompt": "Log what I built in this session, the CSV importer and its retry logic, to my project history in Hakutaku.",
+			"expect": "load",
+			"kind": "should"
+		},
+		{
+			"id": "near-02",
+			"prompt": "Write a SQL query that joins orders and customers and sums revenue by region.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-03",
+			"prompt": "Search the web for the latest stable release of PostgreSQL.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-05",
+			"prompt": "Remember to use tabs instead of spaces in this repo.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-06",
+			"prompt": "Explain the difference between Kafka and RabbitMQ for event pipelines.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-08",
+			"prompt": "Write a function that sends an email using nodemailer.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-09",
+			"prompt": "What are good practices for writing meeting notes?",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-11",
+			"prompt": "How does PKCE work in OAuth 2.1?",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-12",
+			"prompt": "In general terms, what does the LGPD say about data retention periods?",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-14",
+			"prompt": "Add a TODO comment in this function to handle the empty list case.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-15",
+			"prompt": "Summarize this README for me.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-17",
+			"prompt": "What's the formula for compound annual growth rate?",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-18",
+			"prompt": "Store the API response in a local cache with a 5 minute TTL.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-20",
+			"prompt": "Explain what retrieval augmented generation is.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-21",
+			"prompt": "Write unit tests for the invoice total calculator in src/billing/total.ts.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-23",
+			"prompt": "Grep the codebase for every place we call the payments API.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-24",
+			"prompt": "Draft a polite generic template for asking a client to pay an overdue invoice.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-26",
+			"prompt": "Search Stack Overflow for why my Jest mocks are not resetting between tests.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-27",
+			"prompt": "O que é um grafo de conhecimento?",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-29",
+			"prompt": "Salva esse arquivo como relatorio.csv na pasta output.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-30",
+			"prompt": "Lembra de sempre usar aspas simples nesse projeto.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-32",
+			"prompt": "Pesquisa na web qual é a versão mais nova do Node LTS.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-33",
+			"prompt": "Explain the CAP theorem with an example.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-35",
+			"prompt": "Convert this JSON array of transactions into a CSV and compute the sum of the amount column.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "near-36",
+			"prompt": "Create a CHANGELOG entry for the retry logic I just added.",
+			"expect": "no-load",
+			"kind": "near-miss"
+		},
+		{
+			"id": "bg-02",
+			"prompt": "Refactor this class component to a function component with hooks.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-03",
+			"prompt": "Why is my Docker build so slow? Here is the Dockerfile.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-05",
+			"prompt": "Rename the variable tmp to pendingOrders across this file.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-06",
+			"prompt": "Upgrade eslint to v9 and migrate the config to the flat format.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-08",
+			"prompt": "The tests in auth.test.ts are flaky on CI; investigate.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-09",
+			"prompt": "Implement debounce for the search input.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-11",
+			"prompt": "Add a dark mode toggle using Tailwind's class strategy.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-12",
+			"prompt": "Convert this callback-based fs code to async/await.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-14",
+			"prompt": "Optimize this SQL query; it does a sequential scan on a 10M row table.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-15",
+			"prompt": "Create a Prisma migration adding a nullable archived_at column to Project.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-17",
+			"prompt": "Why does useEffect run twice in development?",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-18",
+			"prompt": "Make the navbar responsive below 640px.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-20",
+			"prompt": "Port this Python function to Go.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-21",
+			"prompt": "Run the linter and fix the warnings in src/components.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-23",
+			"prompt": "Write a multi-stage Dockerfile for a Next.js app.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-24",
+			"prompt": "Debug why the websocket disconnects every 60 seconds behind nginx.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-26",
+			"prompt": "Split utils.ts into smaller modules; it's 900 lines.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-27",
+			"prompt": "Implement a binary search tree with insert and delete in Rust.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-29",
+			"prompt": "Add a loading skeleton to the dashboard cards.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-30",
+			"prompt": "Write a Terraform module for an S3 bucket with versioning enabled.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-32",
+			"prompt": "Profile this React list; scrolling is janky with 5,000 rows.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-33",
+			"prompt": "Add react-i18next to the settings page.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-35",
+			"prompt": "Write a GraphQL resolver that fetches a user's posts with cursor pagination.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-36",
+			"prompt": "Fix the CORS error when calling the API from localhost:5173.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-38",
+			"prompt": "Add a health check endpoint to the Express server.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-39",
+			"prompt": "Write a SwiftUI view that shows a list of items with swipe to delete.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-41",
+			"prompt": "What's wrong with this Kotlin coroutine that never completes?",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-42",
+			"prompt": "Resize uploaded images to 1024px wide on the client before sending them.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-44",
+			"prompt": "Corrige esse erro de build: Module not found: Can't resolve '@/lib/utils'.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-45",
+			"prompt": "Cria um componente de modal acessível com foco preso.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-47",
+			"prompt": "Adiciona paginação na tabela de pedidos.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-48",
+			"prompt": "Refatora essa função pra ficar mais legível, tem muito if aninhado.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-50",
+			"prompt": "Como eu configuro o ESLint pra ignorar a pasta dist?",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-51",
+			"prompt": "Deixa esse layout responsivo no celular.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-53",
+			"prompt": "Gera os tipos TypeScript a partir desse JSON Schema.",
+			"expect": "no-load",
+			"kind": "background"
+		},
+		{
+			"id": "bg-54",
+			"prompt": "Configura o husky pra rodar o lint antes do commit.",
+			"expect": "no-load",
+			"kind": "background"
+		}
+	]
+}

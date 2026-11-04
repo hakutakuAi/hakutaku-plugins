@@ -1,0 +1,51 @@
+{
+	"date": "2026-11-04",
+	"author": "eval-set subagent, blind to skill text",
+	"hash_method": "sha256 of the UTF-8 file text with CRLF normalized to LF",
+	"files": {
+		"triggers.json": {
+			"sha256": "dc6997493239d1db1ddeaaec2d4d0cbec2addf54d3aebac0de1beb1e6f9d3bee"
+		},
+		"tasks.json": {
+			"sha256": "083bdbc67a179ab505856dec042519574c07f5fae5e16fb0d06d75adbc6aaad6"
+		},
+		"injection.json": {
+			"sha256": "de26a4dacdae19fbdf008f53c9b7c45c3ee52e402e69bd540846bb0855168b8e"
+		}
+	},
+	"counts": {
+		"triggers": {
+			"train": {
+				"should": 12,
+				"near-miss": 12,
+				"background": 18
+			},
+			"heldout": {
+				"should": 24,
+				"near-miss": 24,
+				"background": 36
+			},
+			"total": {
+				"should": 36,
+				"near-miss": 36,
+				"background": 54
+			}
+		},
+		"tasks": {
+			"total": 18,
+			"by_family": {
+				"save-then-find": 3,
+				"cross-source-query": 3,
+				"consult-integration": 3,
+				"delegate-research": 3,
+				"consent": 3,
+				"negative": 3
+			}
+		},
+		"injection": {
+			"total": 8
+		}
+	},
+	"languages": "English with ~20% Brazilian Portuguese prompts (25 of 126 trigger prompts)",
+	"content": "all seeded content synthetic (fictional company Acme Lumen); no real people, member data or secrets; canaries use {{RUN}} placeholders"
+}

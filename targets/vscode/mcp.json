@@ -1,0 +1,8 @@
+{
+	"servers": {
+		"hakutaku": {
+			"type": "http",
+			"url": "https://app.hakutaku.ai/api/mcp"
+		}
+	}
+}
