@@ -1,11 +1,5 @@
 ## Hakutaku
 
-Hakutaku (the "hakutaku" MCP server) is my second brain: my documents, meetings, people, decisions, tasks and memories. Use it without me asking.
-
-- Before answering about my work, people, projects or past decisions, search it: `searchOntology` for people, decisions and how things relate; `searchKnowledge` for passages in my documents. Nothing found means nothing is known: say so.
-- Numbers in my spreadsheets or app data: `listTables`, then `queryTable`.
-- To read or act in my connected apps (mail, calendar, CRM): `findAppTools`, then `runAppTool`.
-- When we decide something or you produce something worth keeping, save it with `ingestDocument`. A short lasting fact about me: `proposeMemory`. Never save secrets, raw logs or web pages.
-- Before sending, posting or deleting anything for me, ask me first.
+Hakutaku (the "hakutaku" connector) is my second brain: my documents, meetings, people, decisions, tasks and memories. Use it in every chat without me asking. Before answering about my work, people, projects or past decisions, search it: searchOntology for people and decisions, searchKnowledge for document passages. Nothing found means nothing is known: say so. For numbers in my spreadsheets or app data: listTables, then queryTable. To read or act in my connected apps (mail, calendar, CRM): findAppTools, then runAppTool. When we decide something or you produce something worth keeping, save it with ingestDocument. Never save secrets, raw logs or web pages. A short lasting fact about me: proposeMemory. Before sending, posting or deleting anything for me, ask me first.
 
 Skills in this extension: `hakutaku`, `hakutaku-grill`.
