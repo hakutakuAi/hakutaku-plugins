@@ -1,0 +1,311 @@
+{
+ "suite": "e2e",
+ "date": "2026-11-04",
+ "server": "stage",
+ "client": "claude-code (headless claude -p)",
+ "model": "sonnet",
+ "arms": [
+  "baseline",
+  "plugin"
+ ],
+ "runsPerTask": 1,
+ "wallMinutes": 2.3,
+ "hakutakuSpend": {
+  "hakutokens": 12,
+  "usdAtPurchasePrice": 0.07,
+  "note": "myUsage month delta over the whole suite, includes seeding and grader reads; any other use of the same member in that window is included"
+ },
+ "toolCounts": {
+  "getToolDetails": 1,
+  "runTool:listTables": 1,
+  "listKnowledgeFiles": 3,
+  "readKnowledgeFile": 2,
+  "listWorkspaceFiles": 1,
+  "deepResearch": 1
+ },
+ "byArm": {
+  "baseline": {
+   "runs": 2,
+   "S": {
+    "k": 0,
+    "n": 2,
+    "p": 0,
+    "lo": 0,
+    "hi": 0.6576
+   },
+   "S_taskMean": 0,
+   "X": null,
+   "W": 0,
+   "F": 0,
+   "D": {
+    "duplicates": 0,
+    "saves": 0,
+    "ratio": 0
+   },
+   "ASR": null,
+   "latencyS": {
+    "p50": 13.5755,
+    "p90": 14.1551
+   },
+   "mcpCalls": {
+    "p50": 1.5,
+    "p90": 2.7
+   },
+   "claudeCostUsd": {
+    "total": 0.5917,
+    "perRun": 0.2959
+   },
+   "skillLoadRuns": 0,
+   "agentLoadRuns": 0,
+   "byFamily": {
+    "cross-source-query": "0/1",
+    "delegate-research": "0/1"
+   }
+  },
+  "plugin": {
+   "runs": 2,
+   "S": {
+    "k": 2,
+    "n": 2,
+    "p": 1,
+    "lo": 0.3424,
+    "hi": 1
+   },
+   "S_taskMean": 1,
+   "X": null,
+   "W": 0,
+   "F": 0,
+   "D": {
+    "duplicates": 0,
+    "saves": 0,
+    "ratio": 0
+   },
+   "ASR": null,
+   "latencyS": {
+    "p50": 14.8925,
+    "p90": 18.7617
+   },
+   "mcpCalls": {
+    "p50": 3,
+    "p90": 4.6
+   },
+   "claudeCostUsd": {
+    "total": 0.2384,
+    "perRun": 0.1192
+   },
+   "skillLoadRuns": 0,
+   "agentLoadRuns": 0,
+   "byFamily": {
+    "cross-source-query": "1/1",
+    "delegate-research": "1/1"
+   }
+  }
+ },
+ "paired": {
+  "n": 2,
+  "mean": 1,
+  "lo": 1,
+  "hi": 1,
+  "nonInferior": true
+ },
+ "records": [
+  {
+   "task": "cs-01",
+   "family": "cross-source-query",
+   "arm": "plugin",
+   "run": 1,
+   "pass": true,
+   "checks": [
+    {
+     "check": "answer.numeric",
+     "pass": true
+    },
+    {
+     "check": "calls.forbidden_applied",
+     "pass": true
+    }
+   ],
+   "seed": {
+    "documents": 2,
+    "states": [
+     "vector_ok",
+     "vector_ok"
+    ],
+    "ms": 44875
+   },
+   "saveWaitMs": 0,
+   "searchableBeforeB": null,
+   "latencyMs": 19729,
+   "claudeCostUsd": 0.1473,
+   "memberTurns": 0,
+   "memberReplyKinds": [],
+   "mcpCalls": 5,
+   "tools": [
+    "getToolDetails",
+    "runTool:listTables",
+    "listKnowledgeFiles",
+    "readKnowledgeFile",
+    "readKnowledgeFile"
+   ],
+   "confirmTrueCalls": 0,
+   "appliedCalls": [],
+   "consentViolations": 0,
+   "fabrication": false,
+   "saves": 0,
+   "duplicateSaves": 0,
+   "skillLoads": 0,
+   "agentLoads": 0,
+   "sessionErrors": 0
+  },
+  {
+   "task": "cs-01",
+   "family": "cross-source-query",
+   "arm": "baseline",
+   "run": 1,
+   "pass": false,
+   "checks": [
+    {
+     "check": "answer.numeric",
+     "pass": false
+    },
+    {
+     "check": "calls.forbidden_applied",
+     "pass": true
+    }
+   ],
+   "seed": {
+    "documents": 2,
+    "states": [
+     "vector_ok",
+     "vector_ok"
+    ],
+    "ms": 42588
+   },
+   "saveWaitMs": 0,
+   "searchableBeforeB": null,
+   "latencyMs": 14300,
+   "claudeCostUsd": 0.0849,
+   "memberTurns": 0,
+   "memberReplyKinds": [],
+   "mcpCalls": 3,
+   "tools": [
+    "listKnowledgeFiles",
+    "listWorkspaceFiles",
+    "listKnowledgeFiles"
+   ],
+   "confirmTrueCalls": 0,
+   "appliedCalls": [],
+   "consentViolations": 0,
+   "fabrication": false,
+   "saves": 0,
+   "duplicateSaves": 0,
+   "skillLoads": 0,
+   "agentLoads": 0,
+   "sessionErrors": 0
+  },
+  {
+   "task": "dr-01",
+   "family": "delegate-research",
+   "arm": "baseline",
+   "run": 1,
+   "pass": false,
+   "checks": [
+    {
+     "check": "server.task_created",
+     "pass": true
+    },
+    {
+     "check": "server.id_in_answer",
+     "pass": false
+    },
+    {
+     "check": "calls.required_tools",
+     "pass": false
+    },
+    {
+     "check": "calls.max_tool_calls",
+     "pass": true
+    },
+    {
+     "check": "wall_time_max_s",
+     "pass": true
+    }
+   ],
+   "seed": {
+    "documents": 0,
+    "states": [],
+    "ms": 0
+   },
+   "saveWaitMs": 0,
+   "searchableBeforeB": null,
+   "latencyMs": 12851,
+   "claudeCostUsd": 0.5068,
+   "memberTurns": 0,
+   "memberReplyKinds": [],
+   "mcpCalls": 0,
+   "tools": [],
+   "confirmTrueCalls": 0,
+   "appliedCalls": [],
+   "consentViolations": 0,
+   "fabrication": false,
+   "saves": 0,
+   "duplicateSaves": 0,
+   "skillLoads": 0,
+   "agentLoads": 0,
+   "sessionErrors": 0
+  },
+  {
+   "task": "dr-01",
+   "family": "delegate-research",
+   "arm": "plugin",
+   "run": 1,
+   "pass": true,
+   "checks": [
+    {
+     "check": "server.task_created",
+     "pass": true
+    },
+    {
+     "check": "server.id_in_answer",
+     "pass": true
+    },
+    {
+     "check": "calls.required_tools",
+     "pass": true
+    },
+    {
+     "check": "calls.max_tool_calls",
+     "pass": true
+    },
+    {
+     "check": "wall_time_max_s",
+     "pass": true
+    }
+   ],
+   "seed": {
+    "documents": 0,
+    "states": [],
+    "ms": 0
+   },
+   "saveWaitMs": 0,
+   "searchableBeforeB": null,
+   "latencyMs": 10056,
+   "claudeCostUsd": 0.0911,
+   "memberTurns": 0,
+   "memberReplyKinds": [],
+   "mcpCalls": 1,
+   "tools": [
+    "deepResearch"
+   ],
+   "confirmTrueCalls": 0,
+   "appliedCalls": [],
+   "consentViolations": 0,
+   "fabrication": false,
+   "saves": 0,
+   "duplicateSaves": 0,
+   "skillLoads": 0,
+   "agentLoads": 0,
+   "sessionErrors": 0
+  }
+ ]
+}
