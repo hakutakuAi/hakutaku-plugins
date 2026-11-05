@@ -1,0 +1,11 @@
+interface:
+  display_name: "Grill a plan"
+  short_description: "Stress-test a plan against what your brain already knows"
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "hakutaku"
+      transport: "streamable_http"
+      url: "https://app.hakutaku.ai/api/mcp"
+policy:
+  allow_implicit_invocation: false

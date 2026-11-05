@@ -1,0 +1,9 @@
+# Add to ~/.codex/config.toml, then run: codex mcp login hakutaku
+[mcp_servers.hakutaku]
+url = "https://app.hakutaku.ai/api/mcp"
+
+# API-key alternative (no browser sign-in): create a key in Hakutaku Settings > MCP,
+# put it in the HAKUTAKU_API_KEY environment variable, and use this instead of the block above.
+# [mcp_servers.hakutaku]
+# url = "https://app.hakutaku.ai/api/mcp"
+# bearer_token_env_var = "HAKUTAKU_API_KEY"

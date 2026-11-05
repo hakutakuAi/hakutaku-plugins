@@ -1,0 +1,44 @@
+{
+	"name": "hakutaku",
+	"displayName": "Hakutaku",
+	"version": "1.0.0",
+	"registryName": "io.github.hakutakuAi/hakutaku",
+	"description": "Your Hakutaku second brain in any agent: search your documents, meetings, decisions and data, save what you decide, and hand work to your agents.",
+	"registryDescription": "Your second brain: documents, meetings, decisions, tables, agents and connected apps.",
+	"descriptionPtBR": "Seu segundo cérebro Hakutaku em qualquer agente: busque seus documentos, reuniões, decisões e dados, salve o que você decidiu e passe trabalho para os seus agentes.",
+	"mcpServerName": "hakutaku",
+	"mcpUrl": "https://app.hakutaku.ai/api/mcp",
+	"apiKeyEnvVar": "HAKUTAKU_API_KEY",
+	"author": {
+		"name": "João Vitor Ribeiro de Lima",
+		"url": "https://github.com/jayjayholic"
+	},
+	"organization": "Hakutaku",
+	"homepage": "https://hakutaku.ai",
+	"repository": "https://github.com/hakutakuAi/hakutaku-plugins",
+	"license": "MIT",
+	"privacyPolicyUrl": "https://app.hakutaku.ai/privacy",
+	"termsOfServiceUrl": "https://app.hakutaku.ai/terms-of-service",
+	"supportUrl": "https://github.com/hakutakuAi/hakutaku-plugins/issues",
+	"supportEmail": "haku@hakutaku.ai",
+	"keywords": [
+		"second-brain",
+		"knowledge",
+		"memory",
+		"mcp",
+		"knowledge-graph",
+		"agents",
+		"research",
+		"automation"
+	],
+	"skills": {
+		"hakutaku": {
+			"displayName": "Hakutaku",
+			"shortDescription": "Search, save to and act through your Hakutaku second brain"
+		},
+		"hakutaku-grill": {
+			"displayName": "Grill a plan",
+			"shortDescription": "Stress-test a plan against what your brain already knows"
+		}
+	}
+}

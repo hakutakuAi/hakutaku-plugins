@@ -1,0 +1,9 @@
+interface:
+  display_name: "Hakutaku"
+  short_description: "Search, save to and act through your Hakutaku second brain"
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "hakutaku"
+      transport: "streamable_http"
+      url: "https://app.hakutaku.ai/api/mcp"

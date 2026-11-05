@@ -1,0 +1,26 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Generated files match their sources
+        run: node scripts/build.mjs --check
+      - name: Held-out prompts do not leak into skills
+        run: node scripts/leak-check.mjs
+      - name: Guidance is not duplicated across layers
+        run: node scripts/check-guidance.mjs
+      - name: No secrets or member data
+        run: node scripts/secret-scan.mjs

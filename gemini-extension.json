@@ -1,0 +1,11 @@
+{
+	"name": "hakutaku",
+	"version": "1.0.0",
+	"description": "Your Hakutaku second brain in any agent: search your documents, meetings, decisions and data, save what you decide, and hand work to your agents.",
+	"contextFileName": "GEMINI.md",
+	"mcpServers": {
+		"hakutaku": {
+			"httpUrl": "https://app.hakutaku.ai/api/mcp"
+		}
+	}
+}

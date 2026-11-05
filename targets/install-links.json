@@ -1,0 +1,6 @@
+{
+	"cursor": "cursor://anysphere.cursor-deeplink/mcp/install?name=hakutaku&config=eyJ1cmwiOiJodHRwczovL2FwcC5oYWt1dGFrdS5haS9hcGkvbWNwIn0=",
+	"cursorWeb": "https://cursor.com/en/install-mcp?name=hakutaku&config=eyJ1cmwiOiJodHRwczovL2FwcC5oYWt1dGFrdS5haS9hcGkvbWNwIn0=",
+	"vscode": "vscode:mcp/install?%7B%22name%22%3A%22hakutaku%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fapp.hakutaku.ai%2Fapi%2Fmcp%22%7D",
+	"vscodeWeb": "https://insiders.vscode.dev/redirect/mcp/install?name=hakutaku&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fapp.hakutaku.ai%2Fapi%2Fmcp%22%7D"
+}

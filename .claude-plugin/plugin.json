@@ -1,0 +1,28 @@
+{
+	"name": "hakutaku",
+	"displayName": "Hakutaku",
+	"version": "1.0.0",
+	"description": "Your Hakutaku second brain in any agent: search your documents, meetings, decisions and data, save what you decide, and hand work to your agents.",
+	"author": {
+		"name": "João Vitor Ribeiro de Lima",
+		"url": "https://github.com/jayjayholic"
+	},
+	"homepage": "https://hakutaku.ai",
+	"repository": "https://github.com/hakutakuAi/hakutaku-plugins",
+	"license": "MIT",
+	"keywords": [
+		"second-brain",
+		"knowledge",
+		"memory",
+		"mcp",
+		"knowledge-graph",
+		"agents",
+		"research",
+		"automation"
+	],
+	"icon": "./assets/icon.png",
+	"documentationUrl": "https://github.com/hakutakuAi/hakutaku-plugins#readme",
+	"supportUrl": "https://github.com/hakutakuAi/hakutaku-plugins/issues",
+	"privacyPolicyUrl": "https://app.hakutaku.ai/privacy",
+	"termsOfServiceUrl": "https://app.hakutaku.ai/terms-of-service"
+}

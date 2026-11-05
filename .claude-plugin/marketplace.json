@@ -1,0 +1,31 @@
+{
+	"name": "hakutaku",
+	"owner": {
+		"name": "João Vitor Ribeiro de Lima",
+		"url": "https://github.com/jayjayholic"
+	},
+	"description": "Hakutaku plugins: Your Hakutaku second brain in any agent: search your documents, meetings, decisions and data, save what you decide, and hand work to your agents.",
+	"plugins": [
+		{
+			"name": "hakutaku",
+			"source": "./",
+			"description": "Your Hakutaku second brain in any agent: search your documents, meetings, decisions and data, save what you decide, and hand work to your agents.",
+			"version": "1.0.0",
+			"author": {
+				"name": "João Vitor Ribeiro de Lima",
+				"url": "https://github.com/jayjayholic"
+			},
+			"category": "productivity",
+			"keywords": [
+				"second-brain",
+				"knowledge",
+				"memory",
+				"mcp",
+				"knowledge-graph",
+				"agents",
+				"research",
+				"automation"
+			]
+		}
+	]
+}
